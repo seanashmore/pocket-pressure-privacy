@@ -1,14 +1,16 @@
 # Privacy Policy for Pocket Pressure
 
-_Last updated: 2026-09-30_
+_Last updated: 2026-10-01_
+
+Pocket Pressure is published by Little Lost Projects. Contact details are at the end of this policy.
 
 ## The short version
 
-Pocket Pressure doesn't collect your data. It has no server, no account, no analytics and no ads, and nothing you enter is ever sent anywhere by the app. Everything you enter stays on your device, encrypted, until you delete it or uninstall the app. The one optional exception is Health Connect export, which you can turn on to copy your readings into Android's own on-device health store (see below).
+Pocket Pressure doesn't collect your data. It has no server, no account, no analytics and no ads, and the app never sends what you enter to us or to anyone else. Everything you enter is stored on your device, encrypted, until you delete it or uninstall the app. There are two things you can choose to do that put a copy outside the app's own storage: turn on Health Connect export, which copies your readings into Android's own on-device health store, and export or share a CSV or PDF file (see below).
 
 The app offers an optional one-time "Premium" purchase through Google Play. That purchase is handled by Google Play, not by us, and it's the only reason the app has internet permission at all (see "Google Play purchases" below). Your readings and settings are never part of it.
 
-A privacy policy for an app that collects nothing is an unusual thing to write, but Google Play requires one regardless of what a developer does or doesn't collect, so here it is — stated plainly rather than as boilerplate that doesn't reflect how the app actually works.
+Google Play requires every app to have a privacy policy, including apps that collect nothing. This one describes how Pocket Pressure actually works.
 
 ## What Pocket Pressure stores, and where
 
@@ -19,7 +21,7 @@ Pocket Pressure is a blood pressure tracking app. When you use it, it stores the
 - Profiles: each reading belongs to a profile. Every installation has one profile for you; with Premium you can add more (for example a partner or parent). A profile holds a name, a colour and icon you pick for its avatar, and optionally a date of birth, a medication list and a target range that you type in. They are stored in the same encrypted database as your readings and are only printed on a report you choose to share. If you keep readings for someone else, that is your choice and your responsibility: the app treats every profile the same way and never sends any of it anywhere.
 - If you enable App Lock: a cryptographic hash of your PIN (never the PIN itself)
 
-This data is held in a local database that is **encrypted at rest** (SQLCipher, with the encryption key protected by your device's hardware-backed Android Keystore). The app also opts out of Android's automatic cloud backup and device-to-device transfer, so none of this data is ever copied off your device by the operating system either. This also means your readings don't move to a new phone automatically — export them as a CSV and import that file on the new device.
+This data is held in a local database that is **encrypted at rest** (SQLCipher, with the encryption key protected by the Android Keystore, which is hardware-backed on devices that support it). The app also opts out of Android's automatic cloud backup and device-to-device transfer, so none of this data is ever copied off your device by the operating system either. This also means your readings don't move to a new phone automatically — export them as a CSV and import that file on the new device.
 
 ## What Pocket Pressure does *not* do
 
@@ -62,14 +64,20 @@ Pocket Pressure requests these Android permissions:
 - **Google Play billing and internet (`com.android.vending.BILLING`, `INTERNET`, `ACCESS_NETWORK_STATE`)** — added automatically by libraries the app includes (Google Play's billing library, and Android's WorkManager background-task library, which schedules reminders). Pocket Pressure's own code never uses them to send anything; the only network use is Google Play billing, as described above. These are granted at install time; Android doesn't ask you about them.
 - **Background tasks (`WAKE_LOCK`, `RECEIVE_BOOT_COMPLETED`, `FOREGROUND_SERVICE`)** — also added by the WorkManager library: they let Android wake the app at the time of a reminder and restore your reminders after the phone restarts. They give the app no access to your data.
 
+## Exporting and sharing (optional)
+
+You can export your readings as a CSV file or a PDF report and share them with another app, a healthcare provider or someone else, using Android's share sheet. A PDF report includes your readings and, if you have filled them in on the profile, a name, date of birth, medication list and target range. The app writes the file to its temporary storage only so that Android can hand it to the app you pick, and deletes those temporary copies the next time the app starts. Once you send or save a file, the copy you sent or saved is outside Pocket Pressure's control: whoever or whatever receives it is covered by their own privacy practices, not this policy, and deleting or uninstalling the app does not remove it.
+
+Links in the app (for example to this policy or to Health Connect in Google Play) open in your browser or the Play Store, which are separate apps with their own privacy terms.
+
 ## Your data, your control
 
-Because nothing is stored anywhere but your own device:
+Everything the app holds is stored only on your device, so:
 
 - You can export your readings as a CSV file at any time (Settings → Data → Export as CSV), for your own records or to share with a healthcare provider, and import a CSV back in. With several profiles you choose which profile an import or export is for.
 - Deleting a profile deletes its readings and reminders immediately and permanently.
-- Deleting a reading in the app deletes it immediately and permanently — there is no server copy to also remove.
-- **Uninstalling the app deletes everything.** There is no account to close and no server-side data to separately request deletion of, because none exists.
+- Deleting a reading in the app deletes it immediately and permanently — there is no server copy to also remove. If Health Connect export is on at that moment, the reading's Health Connect copy is deleted too; if export was off, delete it in Health Connect yourself.
+- **Uninstalling the app deletes everything the app itself stores** (your readings, profiles and settings). There is no account to close and no server-side data to request deletion of, because none exists. It does not delete copies that live elsewhere: files you exported or shared, and readings already written to Health Connect, which Android keeps until you delete them in Health Connect's own settings.
 
 ## Children's privacy
 
@@ -77,10 +85,12 @@ Pocket Pressure is a general-purpose health-tracking utility, not directed at ch
 
 ## Changes to this policy
 
-If this policy changes, an updated version will be published at the same location with a new "last updated" date. The app's no-server, no-collection design for your health data is a fundamental design choice rather than an incidental current state, so no change here should be expected to weaken it — but the date at the top is the way to confirm what's current.
+If this policy changes, an updated version will be published at the same location with a new "last updated" date, and if a change affects how your data is handled the app's Google Play listing will say so. The date at the top is the way to confirm what's current.
 
 ## Contact
 
 Questions about this policy or the app can be sent to:
+
+Little Lost Projects
 
 **littlelostprojects@gmail.com**
